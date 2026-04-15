@@ -26,7 +26,7 @@ int extended_euclid(int a, int b, int &x, int &y) {
 }
 
 int mod_inverse(int a, int m) {
-    // TODO(student): implement modular inverse using extended_euclid()
+
     // If inverse does not exist, return -1.
     
     int x, y;
@@ -49,7 +49,7 @@ int main() {
     cin >> a >> m;
 
     if (gcd(a, m) != 1) {
-        cout << "Không tồn tại\n";
+        cout << "Khong ton tai nghich dao modulo vi gcd(a, m) != 1.\n";
         return 0;
     }
 
