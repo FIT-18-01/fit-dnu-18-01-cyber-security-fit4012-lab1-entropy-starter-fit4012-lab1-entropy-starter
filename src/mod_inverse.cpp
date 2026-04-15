@@ -26,11 +26,14 @@ int extended_euclid(int a, int b, int &x, int &y) {
 }
 
 int mod_inverse(int a, int m) {
-    // TODO(student): implement modular inverse using extended_euclid()
-    // If inverse does not exist, return -1.
-    (void)a;
-    (void)m;
-    return -1;
+    int x, y;
+    int g = extended_euclid(a, m, x, y);
+    
+    int result = (x % m + m) % m;
+    if (g != 1) {
+        result = -1;
+    }
+    return result;
 }
 
 int main() {
