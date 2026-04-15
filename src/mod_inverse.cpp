@@ -28,9 +28,19 @@ int extended_euclid(int a, int b, int &x, int &y) {
 int mod_inverse(int a, int m) {
     // TODO(student): implement modular inverse using extended_euclid()
     // If inverse does not exist, return -1.
-    (void)a;
-    (void)m;
-    return -1;
+    
+    int x, y;
+    // Gọi hàm extended_euclid để tìm x và y sao cho: a*x + m*y = gcd(a, m)
+    int g = extended_euclid(a, m, x, y);
+
+    // Nghịch đảo modulo chỉ tồn tại khi gcd(a, m) = 1
+    if (g != 1) {
+        return -1;
+    }
+
+    // Kết quả x từ thuật toán Euclid mở rộng có thể âm
+    // Ta sử dụng công thức (x % m + m) % m để đưa x về giá trị dương trong khoảng [0, m-1]
+    return (x % m + m) % m;
 }
 
 int main() {
@@ -39,7 +49,7 @@ int main() {
     cin >> a >> m;
 
     if (gcd(a, m) != 1) {
-        cout << "Khong ton tai nghich dao modulo vi gcd(a, m) != 1.\n";
+        cout << "Không tồn tại\n";
         return 0;
     }
 
