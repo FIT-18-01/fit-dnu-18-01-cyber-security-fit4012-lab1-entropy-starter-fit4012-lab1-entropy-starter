@@ -28,13 +28,7 @@ int extended_euclid(int a, int b, int &x, int &y) {
 int mod_inverse(int a, int m) {
     int x, y;
     int g = extended_euclid(a, m, x, y);
-
-    // Nếu gcd(a, m) khác 1 thì không tồn tại nghịch đảo modulo
-    if (g != 1) {
-        return -1;
-    }
-
-    // Đảm bảo kết quả x là số dương trong khoảng [0, m-1]
+    if (g != 1) return -1; 
     return (x % m + m) % m;
 }
 
