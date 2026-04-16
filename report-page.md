@@ -13,16 +13,16 @@ Tóm tắt ngắn gọn mục tiêu của bài lab.
 ### 3.1 Entropy và redundancy
 | Input | Entropy | Redundancy | Nhận xét |
 |---|---:|---:|---|
-| aaaa |  |  |  |
-| abcd |  |  |  |
-| hello world |  |  |  |
+| aaaa |0.0000|8.0000|entropy thấp, redundancy cao|
+| abcd |2.0000|6.0000|entropy cao hơn `aaaa`|
+| hello world |2.84535|5.15465|entropy và redundancy được tính hợp lệ|
 
 ### 3.2 Modulo inverse
 | a | m | Kết quả mong đợi | Kết quả chương trình |
 |---:|---:|---|---|
-| 3 | 7 | 5 |  |
-| 10 | 17 | 12 |  |
-| 6 | 9 | Không tồn tại |  |
+| 3 | 7 | 5 |nghịch đảo modulo là 5|
+| 10 | 17 | 12 |nghịch đảo modulo là 12|
+| 6 | 9 | Không tồn tại |không tồn tại nghịch đảo modulo|
 
 ## 4. Kết luận
-Nêu ngắn gọn em học được gì từ bài lab, khó khăn lớn nhất là gì, và điều gì giúp em hiểu rõ hơn về entropy hoặc modulo inverse.
+Bài lab đã giúp em hiểu rõ ý nghĩa của Entropy trong việc đo lường lượng tin và độ hỗn loạn của nguồn dữ liệu. Entropy càng cao thì dữ liệu càng ngẫu nhiên và khó đoán, điều này rất quan trọng trong việc tạo ra các khóa bảo mật. Việc xử lý các trường hợp số âm khi tìm nghịch đảo modulo trong thuật toán Euclid mở rộng là bước thử thách nhất. Việc chạy chương trình trực tiếp trên các test case khác nhau (từ chuỗi lặp đến chuỗi đa dạng) đã minh họa trực quan cách mà thông tin dư thừa (Redundancy) ảnh hưởng đến khả năng nén và tính bảo mật của dữ liệu.
